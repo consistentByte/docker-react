@@ -1,0 +1,14 @@
+FROM node:lts-alpine
+
+WORKDIR '/app'
+
+# Copy npm to root, in project directory
+COPY package.json .
+
+# RUN DEPENDENCIES
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+
