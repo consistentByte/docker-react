@@ -10,7 +10,10 @@ services:
     volumes:
       - '/app/node_modules'
       - .:/app
-  test:
+  # test:
+  #   build:
+  tests:
+    stdin_open: true
     build:
       context: .
       dockerfile: Dockerfile.dev
